@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="./js/LocalEvent.js"></script>
+    <script src="../dist/manSlider-0.0.1.js"></script>
+    <script src="http://localhost:9000/livereload.js"></script>
+    <link rel="stylesheet" href="../dist/manSlider.css"></style>
+    <link rel="stylesheet" href="./css/test.css"></style>
+    <style type="text/css">
+        h2 {
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .section {
+            border: 1px solid gray;
+            float: left;
+            margin: 20px;
+            padding: 20px;
+            width: 360px;
+            height: 160px;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        var x0, x1, x2, x3;
+        $(function() {
+            x0 = $("#default-slider").manSlider({
+                range: "min",
+                min: -20,
+                max: 200,
+                value: 30,
+                change: function(val) {
+                    console.log(val);
+                }
+            });
+            x1 = $("#slider-with-theme").manSlider({
+                theme: "kitkat",
+                min: -20,
+                max: 200,
+                value: 30,
+                change: function(val) {
+                    console.log(val);
+                }
+            });
+            x2 = $("#vertical-slider").manSlider({
+                orientation: "vertical",
+                range: "min",
+                min: -20,
+                max: 200,
+                value: 30,
+                change: function(val) {
+                    console.log(val);
+                }
+            });
+            x3 = $("#slider-with-step").manSlider({
+                range: "min",
+                min: -1,
+                max: 1,
+                step: 1,
+                value: 30,
+                change: function(val) {
+                    console.log(val);
+                }
+            });
+            x4 = $("#slider-with-max-range").manSlider({
+                range: "max",
+                min: -20,
+                max: 200,
+                value: 30,
+                change: function(val) {
+                    console.log(val);
+                }
+            });
+        });
+    </script>
+
+    <div class="section">
+        <h2>simple slider</h2>
+        <div id="default-slider">
+        </div>
+    </div>
+
+    <div class="section" style="background: rgb(238, 78, 78);">
+        <h2>slider with theme support</h2>
+        <div id="slider-with-theme">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>vertical slider</h2>
+        <div id="vertical-slider" style="height: 100px;">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>slider with step</h2>
+        <div id="slider-with-step">
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>slider with max range</h2>
+        <div id="slider-with-max-range">
+        </div>
+    </div>
+
+</body>
+</html>

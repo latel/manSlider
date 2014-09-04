@@ -1,0 +1,306 @@
+{
+    "project": {
+        "name": "manSlider",
+        "description": "Simply another useful slider.",
+        "version": "0.0.1",
+        "url": "https://github.com/latel/manSlider"
+    },
+    "files": {
+        "lib\\manSlider.js": {
+            "name": "lib\\manSlider.js",
+            "modules": {},
+            "classes": {
+                "ManSliderFactory": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "ManSliderFactory": {
+            "name": "ManSliderFactory",
+            "shortname": "ManSliderFactory",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "lib\\manSlider.js",
+            "line": 58,
+            "description": "manSlider Class with useful APIS and helper functions.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "descriptor",
+                    "description": "an object with parsed options",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "manSlider instance",
+                "type": "Object"
+            }
+        }
+    },
+    "classitems": [
+        {
+            "file": "lib\\manSlider.js",
+            "line": 140,
+            "description": "Bind proper events on current slider.",
+            "itemtype": "method",
+            "name": "__bindEvents",
+            "access": "private",
+            "return": {
+                "description": "Current manSlider instance for chaining",
+                "type": "Object"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib\\manSlider.js",
+            "line": 170,
+            "description": "Unbind events on current slider.",
+            "itemtype": "method",
+            "name": "__unBindEvents",
+            "access": "private",
+            "return": {
+                "description": "Current manSlider instance for chaining",
+                "type": "Object"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib\\manSlider.js",
+            "line": 184,
+            "description": "Render the handle's position and rang's scale.",
+            "itemtype": "method",
+            "name": "__render",
+            "access": "private",
+            "params": [
+                {
+                    "name": "val",
+                    "description": "percenrage, value?",
+                    "type": "Float"
+                },
+                {
+                    "name": "vop",
+                    "description": "indicate whether this is a percentage[defult] for render or actual value",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib\\manSlider.js",
+            "line": 217,
+            "description": "Get the current value of a slider.",
+            "itemtype": "method",
+            "name": "get",
+            "access": "public",
+            "return": {
+                "description": "Current value",
+                "type": "Intger"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib\\manSlider.js",
+            "line": 228,
+            "description": "Set the current value of a slider.",
+            "itemtype": "method",
+            "name": "set",
+            "access": "public",
+            "return": {
+                "description": "Current manSlider instance for chaining",
+                "type": "Object"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib\\manSlider.js",
+            "line": 261,
+            "description": "Get the dom of current slider.",
+            "itemtype": "method",
+            "name": "dom",
+            "access": "public",
+            "params": [
+                {
+                    "name": "orig",
+                    "description": "if provied, then jQuery wrapper will be pealed",
+                    "type": "Mixed"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib\\manSlider.js",
+            "line": 272,
+            "description": "Destory a slider.",
+            "itemtype": "method",
+            "name": "destory",
+            "access": "public",
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib\\manSlider.js",
+            "line": 291,
+            "description": "Change a slider into interactive mode.",
+            "itemtype": "method",
+            "name": "enable",
+            "access": "public",
+            "return": {
+                "description": "Current manSlider instance for chaining",
+                "type": "Object"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib\\manSlider.js",
+            "line": 307,
+            "description": "Temporarily disable a slider.",
+            "itemtype": "method",
+            "name": "disable",
+            "access": "public",
+            "return": {
+                "description": "Current manSlider instance for chaining",
+                "type": "Object"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib\\manSlider.js",
+            "line": 321,
+            "description": "Add a change listener to current slider instance.",
+            "itemtype": "method",
+            "name": "change",
+            "access": "public",
+            "params": [
+                {
+                    "name": "fn",
+                    "description": "listener function",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "Current manSlider instance for chaining",
+                "type": "Object"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib\\manSlider.js",
+            "line": 333,
+            "description": "Add a slide listener to current slider instance.",
+            "itemtype": "method",
+            "name": "slide",
+            "access": "public",
+            "params": [
+                {
+                    "name": "fn",
+                    "description": "listener function",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "Current manSlider instance for chaining",
+                "type": "Object"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib\\manSlider.js",
+            "line": 345,
+            "description": "Events that will be binded to slider when mousedown events triggered.",
+            "itemtype": "method",
+            "name": "sliderMouseDown",
+            "type": "static",
+            "access": "private",
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib\\manSlider.js",
+            "line": 380,
+            "description": "Events that will be binded to handle when mousedown events triggered.",
+            "itemtype": "method",
+            "name": "handleMouseDown",
+            "type": "static",
+            "access": "private",
+            "return": {
+                "description": "",
+                "type": "Void"
+            },
+            "class": "ManSliderFactory"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:140"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:170"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:184"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:217"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:228"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:261"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:272"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:291"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:307"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:321"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:333"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:345"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib\\manSlider.js:380"
+        }
+    ]
+}
