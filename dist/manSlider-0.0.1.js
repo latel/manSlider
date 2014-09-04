@@ -150,16 +150,15 @@
             $(document).unbind("mousemove.manslider");
         });
 
-        this.__$view.on("mousedown", function(ev) {
+        this.__$view.bind("mousedown", function(ev) {
             if (ev.which !== 1) {
                 return; 
             }
 
-            $(document)
-                .on("mousemove.manslider", function(ev) {
-                    ManSliderFactory.__sliderMouseDown.call(self, ev);
-                    self.trigger("slide");
-                });
+            $(document).bind("mousemove.manslider", function(ev) {
+                ManSliderFactory.__sliderMouseDown.call(self, ev);
+                self.trigger("slide");
+            });
 
             ManSliderFactory.__sliderMouseDown.call(self, ev);
         });
