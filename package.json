@@ -1,7 +1,7 @@
 {
   "name": "manSlider",
   "version": "0.0.1",
-  "description": "Simply another useful slider.",
+  "description": "Simple but useful slider with theme support and various of abilities.",
   "repository": {
     "type": "git",
     "url": "https://github.com/latel/manSlider.git"
