@@ -24,7 +24,7 @@ If you want to help me with a donation I'll appreciate :-)
 	    <script src="plugin/manSlider/manSlider-0.0.1.min.js"></script>
         <link rel="stylesheet" href="plugin/manSlider/manSlider.css">
         
-   *or you can choose to use packed verion ( *which is not recommended* ) :*
+   or you can choose to use packed verion ( *which is not recommended* ) :
    
         <script src="plugin/manSlider/manSlider-0.0.1.packed.min.js"></script>
         <link rel="stylesheet" href="plugin/manSlider/manSlider.css">

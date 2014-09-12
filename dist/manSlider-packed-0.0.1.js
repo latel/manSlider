@@ -548,7 +548,7 @@
 
     // Get a variable's real type
     LocalEvent.type = function(t) {
-        return toString.call(t).slice(8, -1) || null;
+        return undefined === t? "Undefined" : (toString.call(t).slice(8, -1) || null);
     };
 
     // Find the index of needle in hay, using Array.prototype.indexOf in flavor
@@ -1047,5 +1047,5 @@
         theme: "white"
     };
 
-}(jQuery, LocalEvent));
+}(window.jQuery, window.LocalEvent));
 
