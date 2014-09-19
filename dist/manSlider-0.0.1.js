@@ -365,7 +365,7 @@
             sliderHeight = this.__$view.height(),
             relPosition = {
                 top: ev.pageY - sliderPosition.top,
-                left: ev.pageX - sliderPosition.left,
+                left: ev.pageX - sliderPosition.left
             },
             percentage;
 
