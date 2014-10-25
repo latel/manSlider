@@ -1051,5 +1051,5 @@
         theme: "white"
     };
 
-}(global.jQuery, global.LocalEvent));
+}(this.jQuery, this.LocalEvent));
 
