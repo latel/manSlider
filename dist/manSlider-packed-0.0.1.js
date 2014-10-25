@@ -843,9 +843,11 @@
      * Set the current value of a slider.
      * @method set
      * @access public
-     * @return {Object} Current manSlider instance for chaining
+     * @param  {Intger}  val  current value
+     * @param  {Boolean} donotTrigger  whether to trigger the change callback
+     * @return {Object}  Current manSlider instance for chaining
      */
-    ManSliderFactory.poto.set = function(val) {
+    ManSliderFactory.poto.set = function(val, donotTrigger) {
         var old = this.value;
 
         if ("number" === typeof val) {
@@ -865,7 +867,9 @@
             if (val !== old) {
                 this.value = val;
                 this.__render(val, true);
-                this.trigger("change", val);
+                if (false !== donotTrigger) {
+                    this.trigger("change", val);
+                }
             }
         }
 
@@ -1008,7 +1012,7 @@
     };
 
 
-    // extend interface to jQuert prototype
+    // extend interface to jQuery prototype
     $.fn.manSlider = function(options) {
         var manSliders = [],
             options = $.extend({}, $.fn.manSlider.defaults, options);
@@ -1047,5 +1051,5 @@
         theme: "white"
     };
 
-}(window.jQuery, window.LocalEvent));
+}(global.jQuery, global.LocalEvent));
 
