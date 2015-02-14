@@ -972,7 +972,7 @@
             if (this.value > max) {
                 this.value = max;
             }
-            this.max = max;
+            this.__max = max;
             this.__render(this.value, true);
         }
 
