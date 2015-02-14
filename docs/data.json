@@ -235,6 +235,46 @@
         {
             "file": "lib/manSlider.js",
             "line": 358,
+            "description": "Change the current max value",
+            "itemtype": "method",
+            "name": "max",
+            "access": "public",
+            "params": [
+                {
+                    "name": "max",
+                    "description": "Newer max value, must larger than min",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Current manSlider instance for chaining",
+                "type": "Object"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib/manSlider.js",
+            "line": 377,
+            "description": "Change the current min value",
+            "itemtype": "method",
+            "name": "min",
+            "access": "public",
+            "params": [
+                {
+                    "name": "min",
+                    "description": "Newer min value, must miner than max",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Current manSlider instance for chaining",
+                "type": "Object"
+            },
+            "class": "ManSliderFactory"
+        },
+        {
+            "file": "lib/manSlider.js",
+            "line": 396,
             "description": "Events that will be binded to slider when mousedown events triggered.",
             "itemtype": "method",
             "name": "sliderMouseDown",
@@ -248,7 +288,7 @@
         },
         {
             "file": "lib/manSlider.js",
-            "line": 398,
+            "line": 436,
             "description": "Events that will be binded to handle when mousedown events triggered.",
             "itemtype": "method",
             "name": "handleMouseDown",
@@ -312,7 +352,15 @@
         },
         {
             "message": "unknown tag: access",
-            "line": " lib/manSlider.js:398"
+            "line": " lib/manSlider.js:377"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib/manSlider.js:396"
+        },
+        {
+            "message": "unknown tag: access",
+            "line": " lib/manSlider.js:436"
         }
     ]
 }

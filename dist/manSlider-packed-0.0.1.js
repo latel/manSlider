@@ -961,6 +961,44 @@
     };
 
     /**
+     * Change the current max value
+     * @method max
+     * @access public
+     * @param {Number} max  Newer max value, must larger than min
+     * @return {Object} Current manSlider instance for chaining
+     */
+    ManSliderFactory.poto.max = function(max) {
+        if (max > this.__min) {
+            if (this.value > max) {
+                this.value = max;
+            }
+            this.max = max;
+            this.__render(this.value, true);
+        }
+
+        return this;
+    };
+
+    /**
+     * Change the current min value
+     * @method min
+     * @access public
+     * @param {Number} min  Newer min value, must miner than max
+     * @return {Object} Current manSlider instance for chaining
+     */
+    ManSliderFactory.poto.min = function(min) {
+        if (min < this.__max) {
+            if (this.value < min) {
+                this.value = min;
+            }
+            this.__min = min;
+            this.__render(this.value, true);
+        }
+
+        return this;
+    };
+
+    /**
      * Events that will be binded to slider when mousedown events triggered.
      * @method sliderMouseDown
      * @type   static
