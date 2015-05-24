@@ -113,6 +113,14 @@ just change them with valid values.
 
   Reutrn the current value.
 
+- **getMax()**
+
+  Reutrn the max value.
+
+- **getMin()**
+
+  Reutrn the min value.
+
 - **value**
 
   Access the current value directly.
