@@ -4,7 +4,7 @@
 #       Author: latel
 #        Email: latelx64@gmail.com
 #     HomePage: http://kezhen.info/
-#      Version: 0.0.1
+#      Version: 0.0.2
 #   LastChange: 2014-09-03 14:44:28
 =============================================================================*/
 
@@ -150,7 +150,7 @@
             $(document).unbind("mousemove.manslider");
         });
 
-        this.__$view.bind("mousedown", function(ev) {
+        this.__$view.bind("mousedown.manSlider", function(ev) {
             if (ev.which !== 1) {
                 return; 
             }
@@ -173,8 +173,8 @@
      * @return {Object} Current manSlider instance for chaining
      */
     ManSliderFactory.poto.__unBindEvents = function() {
-        this.__$view.unbind("mousedown");
-        this.__$handle.unbind("mousedown");
+        this.__$view.unbind("mousedown.manSlider");
+        this.__$handle.unbind("mousedown.manSlider");
         $(document).unbind("mousemove.manslider").unbind("mouseup.manslider");
 
         return this;
@@ -235,12 +235,36 @@
     };
 
     /**
+     * Get the max value of a slider.
+     * @method getMax
+     * @access public
+     * @return {Intger} Max value
+     */
+    ManSliderFactory.poto.getMax = function() {
+        this.trigger("getMaxValue", this.__max);
+        return this.__max;
+    };
+
+    /**
+     * Get the max value of a slider.
+     * @method getMin
+     * @access public
+     * @return {Intger} Min value
+     */
+    ManSliderFactory.poto.getMin = function() {
+        this.trigger("getMinValue", this.__min);
+        return this.__min;
+    };
+
+    /**
      * Set the current value of a slider.
      * @method set
      * @access public
-     * @return {Object} Current manSlider instance for chaining
+     * @param  {Intger}  val  current value
+     * @param  {Boolean} triggerListener  whether to trigger the change callback
+     * @return {Object}  Current manSlider instance for chaining
      */
-    ManSliderFactory.poto.set = function(val) {
+    ManSliderFactory.poto.set = function(val, triggerListener) {
         var old = this.value;
 
         if ("number" === typeof val) {
@@ -260,7 +284,9 @@
             if (val !== old) {
                 this.value = val;
                 this.__render(val, true);
-                this.trigger("change", val);
+                if (true === donotTrigger) {
+                    this.trigger("change", val);
+                }
             }
         }
 
@@ -293,6 +319,8 @@
                 self.__$view.removeClass(clazz);
             }
         });
+
+        this.__unBindEvents();
 
         this.trigger("destory", this.__$view);
     };
@@ -352,6 +380,44 @@
     };
 
     /**
+     * Change the current max value
+     * @method max
+     * @access public
+     * @param {Number} max  Newer max value, must larger than min
+     * @return {Object} Current manSlider instance for chaining
+     */
+    ManSliderFactory.poto.max = function(max) {
+        if (max > this.__min) {
+            if (this.value > max) {
+                this.value = max;
+            }
+            this.__max = max;
+            this.__render(this.value, true);
+        }
+
+        return this;
+    };
+
+    /**
+     * Change the current min value
+     * @method min
+     * @access public
+     * @param {Number} min  Newer min value, must miner than max
+     * @return {Object} Current manSlider instance for chaining
+     */
+    ManSliderFactory.poto.min = function(min) {
+        if (min < this.__max) {
+            if (this.value < min) {
+                this.value = min;
+            }
+            this.__min = min;
+            this.__render(this.value, true);
+        }
+
+        return this;
+    };
+
+    /**
      * Events that will be binded to slider when mousedown events triggered.
      * @method sliderMouseDown
      * @type   static
@@ -365,7 +431,7 @@
             sliderHeight = this.__$view.height(),
             relPosition = {
                 top: ev.pageY - sliderPosition.top,
-                left: ev.pageX - sliderPosition.left,
+                left: ev.pageX - sliderPosition.left
             },
             percentage;
 
@@ -403,7 +469,7 @@
     };
 
 
-    // extend interface to jQuert prototype
+    // extend interface to jQuery prototype
     $.fn.manSlider = function(options) {
         var manSliders = [],
             options = $.extend({}, $.fn.manSlider.defaults, options);
@@ -442,5 +508,5 @@
         theme: "white"
     };
 
-}(jQuery, LocalEvent));
+}(this.jQuery, this.LocalEvent));
 

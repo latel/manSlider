@@ -40,70 +40,80 @@ manSlider comes with theme support, just put your theme css files is put below m
 
         <link rel="stylesheet" href="plugin/manSlider/manSlider.css">
         <link rel="stylesheet" href="plugin/manSlider/manSlider-theme-kitkat.css">
+        
+then special the theme name within the descriptor:
+
+        $("#slider").manSlider({
+            "theme": "kitkat"
+        });
 
 ##Options##
-To custome almost everything by providing a descriptor.
+*To custome almost everything by providing a descriptor.*
 
-- step [Intger]
+- **step** [Intger]
 
    Determines the size or amount of each interval or step the slider takes between the min 
    and max.
    
-- orientation [String]
+- **orientation** [String]
 
    Determines whether the slider handles move horizontally (min on left, max on right) 
    or vertically (min on bottom, max on top). Possible values: "horizontal", "vertical".
 
-- value [Number]
+- **value** [Number]
 
    Determines the value of the slider. 
    
-- range [String]
+- **range** [String]
 
    Whether the slider represents a range.
    Multiple types supported:   
    + Boolean: If set to true, the slider will detect if you have two handles and create a styleable range element between these two.
    + String: Either "min" or "max". A min range goes from the slider min to one handle. A max range goes from one handle to the slider max.
 
-- theme[String]
+- **theme** [String]
 
    Declare a theme to use. You should proper theme stylesheets as well.
 
-- min [Number]
+- **min** [Number]
    
    The minimum value of the slider.
 
-- max [Number]
+- **max** [Number]
 
    The maxium value of the slider.
 
-override default options:
+*override default options:*
+
+manSlider defaults are stored in ***jQuery.fn.manSlider.defaults***,  
+just change them with valid values.
+
 
 
 ##API##
-to manipulate almost everything.
+*to manipulate almost everything.*
 
-- enable()
+- **enable()**
 
-  Enabke a slider.
+  Enable a slider.
  
-- disable()
+- **disable()**
 
   Disable a slider.
 
-- destory()
+- **destory()**
 
   Destory a slider, you can whenever retore it by using enable method again.
   
-- set()
+- **set()**
 
   Set the current value of a slider, this value must be within min and max. 
   
-- get()
+- **get()**
 
   Reutrn the current value.
 
-- value
+- **value**
 
   Access the current value directly.
   
@@ -111,3 +121,4 @@ to manipulate almost everything.
 ##Contrubuting##
 
 1. Kezhen Wong <latelx64@gmail.com>
+2. Ling Yang <ling.yang@ryzur.com.cn>
